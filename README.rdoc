@@ -1,0 +1,5 @@
+== Setup para la aplicacion
+
+1. Correr en la consola: $ rake db:create db:migrate db:seed
+
+2. Iniciar el servidor: rails s

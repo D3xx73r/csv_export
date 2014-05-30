@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="small-12 columns">
+    <h1 class="text-center">Listado de clientes</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-8 small-centered columns">
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Teléfono</th>
+          <th>Género</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @clients.each do |client| %>
+          <tr>
+            <th><%= client.name %></th>
+            <th><%= client.email %></th>
+            <th><%= client.phone_number %></th>
+            <th><%= client.gender %></th>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-3 columns">
+    <%= link_to "Descargar como CSV", csv_exports_path(resource_class: 'Client'), method: 'post' %>
+  </div>
+</div>
